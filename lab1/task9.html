@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Script</title>
+</head>
+<body>
+</body>
+<script>
+    let days = ["пн", "вт", "ср", "чт", "пт", "сб", "вс"]
+    let choice = prompt("Введите номер дня")
+    if(choice){
+        alert(`Выбранный день: ${days[choice-1]}`)
+    }
+    else {
+        alert("Неверный формат")
+    }
+
+    let daysObj = {
+        1: "пн",
+        2: "вт",
+        3: "ср",
+        4: "чт",
+        5: "пт",
+        6: "сб",
+        7: "вс"
+    }
+    choice = prompt("Введите номер дня")
+    if(choice){
+        alert(`Выбранный день: ${daysObj[choice]}`)
+    }
+    else {
+        alert("Неверный формат")
+    }
+
+</script>
+</html>

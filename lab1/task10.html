@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Script</title>
+</head>
+<body>
+</body>
+<script>
+    function someFunction(str1 = "Hello", str2, str3) {
+        let finalStr = str1 + str2 + str3;
+        return finalStr;
+    }
+    let str2 = "world"
+    let str3 = prompt("Введите строку")
+    alert(someFunction(undefined, str2, str3));
+</script>
+</html>

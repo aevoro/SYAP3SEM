@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>JS Script</title>
+</head>
+<body>
+    <h1>Экзамены</h1>
+    <form action="">
+        <input type="checkbox" name="Rus" id="rus">
+        <label for="rus">Русский</label>
+        <input type="checkbox" name="Math" id="math">
+        <label for="Math">Математика</label>
+        <input type="checkbox" name="Eng" id="eng">
+        <label for="Eng">Английский</label>
+        <button type="submit" id="sub">Проверить</button>
+    </form>
+</body>
+<script>
+        let inputs = document.getElementsByTagName("input");
+    let counter = 0;
+    let button = document.getElementById("sub")
+    button.addEventListener("click", () => {
+        for (const inputElem of inputs) {
+            if(inputElem.checked){
+                counter++;
+            }
+        }
+        switch (counter) {
+            case 0: alert("Отчислен")
+                break;
+            case 1:
+            case 2: alert("Пересдача")
+                break;
+            case 3: alert("Переведены")
+                break;
+        }
+    })
+</script>
+</html>

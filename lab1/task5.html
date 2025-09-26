@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JS Script</title>
+</head>
+<body>
+</body>
+<script>
+    let lector = "кудлацкая марина федоровна".split(" ");
+    let input = prompt("Введите фио").toLowerCase().split(" ");
+    for (const inputElement of input) {
+        if(lector.includes(inputElement)) {
+            alert("Данные ведены верно")
+        }
+        else {
+            alert("Неправильно");
+        }
+    }
+
+</script>
+</html>
