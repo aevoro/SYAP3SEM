@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+console.log("Задание 3");
+
+function* movementGenerator() {
+let x = 0;
+let y = 0;
+
+while (true) {
+const command = prompt('Введите направление (left, right, up, down) или "stop" для выхода:');
+
+if (command === 'stop' || command === null) {
+console.log('Программа завершена. Финальные координаты:', { x, y });
+return { x, y };
+}
+
+for (let step = 1; step <= 10; step++) {
+switch (command) {
+case 'left':
+x--;
+break;
+case 'right':
+x++;
+break;
+case 'up':
+y++;
+break;
+case 'down':
+y--;
+break;
+default:
+console.log('Неизвестная команда:', command);
+break;
+}
+
+yield { x, y, step, command };
+}
+
+console.log(`Завершено 10 шагов в направлении: ${command}`);
+console.log(`Текущие координаты: x=${x}, y=${y}`);
+}
+}
+
+function startMovement() {
+const generator = movementGenerator();
+let result = generator.next();
+
+while (!result.done) {
+const { x, y, step, command } = result.value;
+alert(`Шаг ${step}: команда "${command}" -> координаты (${x}, ${y})`);
+result = generator.next();
+}
+}
+
+startMovement();
+</script>
+</body>
+</html>

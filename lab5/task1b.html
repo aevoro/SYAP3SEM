@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task1b</title>
+</head>
+<body>
+<script>
+    let currentCount = 1;
+
+    function makeCounter() {
+        return function() {
+            return currentCount++;
+        };
+    }
+
+    let counter = makeCounter();
+    let counter2 = makeCounter();
+
+    alert(counter());
+    alert(counter());
+
+    alert(counter2());
+    alert(counter2());
+</script>
+</body>
+</html>
